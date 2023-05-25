@@ -11,6 +11,7 @@ from .forms import DaylightHours #NEW
 
 
 
+
 def home_view(request):
     return HttpResponse('''This is Home Page .
                             Welcome !!
@@ -41,3 +42,6 @@ def sr_view_temp(request):
             print(ltn)
     else:
         fm = DaylightHours()
+            
+    return render(request , "srookie.html" , {'form':fm})
+

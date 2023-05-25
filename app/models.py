@@ -1,18 +1,20 @@
 from django.db import models
+from django.core.validators import MinValueValidator, MaxValueValidator
 
 # Create your models here.
 
 
 class User(models.Model):
-    date = models.DateField( auto_now=False, auto_now_add=False) 
-    latitude_south = models.IntegerField( )
+    date = models.DateField(
+                            default=1,
+                            validators=[
+                                MinValueValidator(0),
+                                MaxValueValidator(5)]
+                            ) 
+    latitude_south = models.PositiveIntegerField()
     
     
-    
-    # lat_axistilt = models.DecimalField( decimal_places=2)
-    # lat_degree = models.IntegerField()
-    # lat_minute = models.IntegerField()
-    # lat_second = models.IntegerField()
+
     
     
     
