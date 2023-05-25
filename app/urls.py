@@ -11,5 +11,7 @@ urlpatterns = [
     # path("",views.home_view)
     path("",views.home_view_temp),
     path("about" , views.about_view_temp),
+    path("coffee" ,views.coffee_view_temp) , 
+    
     
 ]

@@ -17,3 +17,6 @@ def home_view_temp(request):
 
 def about_view_temp(request):
     return render(request ,"about.html")
+
+def coffee_view_temp(request):
+    return render(request , "coffee.html")
