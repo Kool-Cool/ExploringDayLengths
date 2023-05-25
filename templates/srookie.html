@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% comment %} 
+1) Science Rookie :- 
+
+Do you know why some places have more day than others? 
+It is because the Earth is not straight and it goes around the Sun. 
+Think of a ball with a stick in it. 
+The stick is the Earth's axis, and it is not straight. 
+This means that different parts of the Earth get more or less sun depending on the time of the year. 
+The places that are near the stick, like the top and bottom of the Earth, 
+have very long days in summer and very short days in winter. 
+The places that are far from the stick, like the middle of the Earth, 
+have about the same day and night all year round. 
+This is because the Sun shines more on them. 
+The day also changes with how far you are from the middle of the Earth. 
+The farther you are, the more your day changes throughout the year. 
+The closer you are, the less it changes.
+
+
+{% endcomment %}
+
+{% block body %}
+
+<p>Do you know why some places have more day than others? 
+    It is because the Earth is not straight and it goes around the Sun. 
+    Think of a ball with a stick in it. 
+    The stick is the Earth's axis, and it is not straight. 
+    This means that different parts of the Earth get more or less sun depending on the time of the year. 
+    The places that are near the stick, like the top and bottom of the Earth, 
+    have very long days in summer and very short days in winter. 
+    The places that are far from the stick, like the middle of the Earth, 
+    have about the same day and night all year round. 
+    This is because the Sun shines more on them. 
+    The day also changes with how far you are from the middle of the Earth. 
+    The farther you are, the more your day changes throughout the year. 
+    The closer you are, the less it changes.</p>
+
+<form  method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+
+    <input type = "submit" value = "SUBMIT">
+</form>
+
+{% endblock body %}

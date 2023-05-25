@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% comment %} Prompt the user to enter their Patron type {% endcomment %}
+
+
+{% comment %} 
+
+Here we have to create two 
+buttons for choocing Patron Type
+
+1) Science Rookie :- 
+
+Do you know why some places have more day than others? 
+It is because the Earth is not straight and it goes around the Sun. 
+Think of a ball with a stick in it. 
+The stick is the Earth's axis, and it is not straight. 
+This means that different parts of the Earth get more or less sun depending on the time of the year. 
+The places that are near the stick, like the top and bottom of the Earth, 
+have very long days in summer and very short days in winter. 
+The places that are far from the stick, like the middle of the Earth, 
+have about the same day and night all year round. 
+This is because the Sun shines more on them. 
+The day also changes with how far you are from the middle of the Earth. 
+The farther you are, the more your day changes throughout the year. 
+The closer you are, the less it changes.
+
+
+To illustrate this concept, here is a diagram that shows how the Earth's tilt affects the amount of sunlight received at different latitudes during different seasons:
+
+![Diagram of Earth's tilt and daylight hours](https://www.windows2universe.org/earth/climate/images/seasons_earth_tilt.jpg)
+
+2) Science Enthusiast 
+
+One of the factors that affects the length of daylight hours is 
+the latitude of a location on Earth. 
+Latitude is the angle between the equator and a point on the surface of the planet. 
+The higher the latitude, 
+the more tilted the Earth's axis is relative to the sun. 
+This means that at higher latitudes, 
+the sun rises and sets at more extreme angles, creating longer or shorter days depending 
+on the season. 
+For example, during the summer solstice in June, the northern hemisphere is tilted towards the sun, so places near the North Pole experience almost 24 hours of daylight, while places near the South Pole experience almost 24 hours of darkness. The opposite happens during the winter solstice in December. The equator, however, has roughly equal day and night throughout the year, because it is always perpendicular to the sun's rays.
+
+
+{% endcomment %}
+
+{% block body %}
+
+<h1 style = "text-align:center">
+    SELECT <br>
+    WHO ARE YOU ??
+
+</h1>
+<div style="text-align:center ">
+
+
+        <form action = "/sr"  method = "get"> 
+            <input type="submit" style="height:100px;width:400px" value = "Science Rookie !! "> </input>
+        </form>
+    
+
+    
+        <form action = "/se"  method = "get"> 
+            <input type="submit" style="height:100px;width:400px" value = "Science Enthusiast  !! "> </input>
+        </form>
+    
+
+
+{% endblock body %}
