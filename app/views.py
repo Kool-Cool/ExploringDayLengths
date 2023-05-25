@@ -10,3 +10,10 @@ def home_view(request):
                             Welcome !!
                             Hemlo World !!!
                         ''')
+    
+def home_view_temp(request):
+    return render(request,"home.html")
+
+
+def about_view_temp(request):
+    return render(request ,"about.html")
