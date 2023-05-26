@@ -36,12 +36,31 @@ def sr_view_temp(request):
     if request == "POST":
         fm = DaylightHours(request.POST)
         if fm.is_valid():
-            dt = fm.cleaned_data["date"]
-            ltn = fm.cleaned_data["latitude_south"]
+            dt = fm.data["date"]
+            ltn = fm["latitude_south"]
             print(dt)
             print(ltn)
     else:
         fm = DaylightHours()
             
     return render(request , "srookie.html" , {'form':fm})
+
+
+
+
+
+
+def result_view_temp(request):
+    dt = request.POST["date"]
+    print(dt)
+    context = {}
+    context["date"] = dt
+    print(context)
+    
+    
+    
+    
+    # return HttpResponse(f"The date is {dt}")
+    return render(request , "result.html" , context)
+
 

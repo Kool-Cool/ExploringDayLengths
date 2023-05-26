@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+
+{% comment %}  
+
+ D = daylength
+   L = latitude
+   J = day of the year
+
+   P = asin[.39795*cos(.2163108 + 2*atan{.9671396*tan[.00860(J-186)]})]
+
+                          _                                         _
+                         / sin(0.8333*pi/180) + sin(L*pi/180)*sin(P) \
+   D = 24 - (24/pi)*acos{  -----------------------------------------  }
+                         \_          cos(L*pi/180)*cos(P)           _/
+
+{% endcomment %}
+
+{% block body %}
+
+The day light hour is {{date}}
+
+
+{% endblock body %}
