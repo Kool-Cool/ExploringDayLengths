@@ -31,6 +31,7 @@ def coffee_view_temp(request):
 def p2_view_temp(request):
     return render(request , "p2.html")
 
+
 def sr_view_temp(request):
     
     if request == "POST":
@@ -55,12 +56,12 @@ def result_view_temp(request):
     print(dt)
     context = {}
     context["date"] = dt
+    context["result"] = 10000
     print(context)
-    
-    
-    
     
     # return HttpResponse(f"The date is {dt}")
     return render(request , "result.html" , context)
 
 
+# def day_time_(date=1 , month=1 , year=2023):
+#     day_count = 

@@ -7,7 +7,7 @@ from .models import User
 class  DaylightHours(forms.ModelForm):
     class Meta:
         model = User
-        fields = ["latitude_south" , "date"]
+        fields = "__all__"
         
         
         
