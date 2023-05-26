@@ -52,16 +52,44 @@ def sr_view_temp(request):
 
 
 def result_view_temp(request):
-    dt = request.POST["date"]
-    print(dt)
+    dt = int(request.POST["date"])
+    mt = int(request.POST["month"])
+    yt = int(request.POST["year"])
+    lt  = float(request.POST["latitude"])
+    
     context = {}
-    context["date"] = dt
-    context["result"] = 10000
+    context["date"] = (dt)
+    context["month"] = mt
+    context["year"] = yt
+    context["latitude"] = float(lt)
+    
+    
+    context["result"] = day_lenght(lt , dt ,mt , yt)
+    
     print(context)
     
     # return HttpResponse(f"The date is {dt}")
     return render(request , "result.html" , context)
 
 
-# def day_time_(date=1 , month=1 , year=2023):
-#     day_count = 
+from datetime import datetime
+from math import sin , asin , cos , acos ,tan , atan , pi 
+
+def day_lenght(L:float ,fun_date=1 , fun_month=1 , fun_year=2023 ):
+    """  
+    L:- lattitude in degrees
+    
+    """
+    
+    date1 = datetime(day=fun_date , month=fun_month,  year=fun_year)
+    date2 = datetime(day= 1 ,month=1 ,year= fun_year)
+    day_count = date1 - date2
+    
+    P = asin(0.39795*cos(0.2163108 + 2*atan(0.9671396*tan(0.00860*((day_count.days)-186)))))
+    
+    num = sin(0.8333*pi/180) + sin(L*pi/180)*sin(P)
+    deno = cos(L*pi/180)*cos(P)
+    
+    D = 24 - (24/pi)*acos(num/deno)
+    
+    return D

@@ -21,7 +21,7 @@ class User(models.Model):
     
     year = models.PositiveIntegerField(default=2023)
     
-    latitude = models.DecimalField(("Latitude"), decimal_places=4 , max_digits=5,default=51.509865)
+    latitude = models.DecimalField(("Latitude (In degrees)"), decimal_places=2 , max_digits=2,default=51.50)
     
     
 

@@ -14,10 +14,12 @@
    D = 24 - (24/pi)*acos{  -----------------------------------------  }
                          \_          cos(L*pi/180)*cos(P)           _/
 
+Use a radian mode here, but latitude should be entered in degrees.
 {% endcomment %}
 
 {% block body %}
 
+For latitude {{latitude}} , on {{date}}/{{month}}/{{year}}:- <br>
 The day light hour is {{result}}
 
 
