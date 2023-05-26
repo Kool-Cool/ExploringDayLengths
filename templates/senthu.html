@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% comment %} 
+
+
+{% endcomment %}
+
+{% block body %}
+
+<p>Science Enthusiast :- <br>
+
+    One of the factors that affects the length of daylight hours is 
+    the latitude of a location on Earth. 
+    Latitude is the angle between the equator and a point on the surface of the planet. 
+    The higher the latitude, 
+    the more tilted the Earth's axis is relative to the sun. 
+    This means that at higher latitudes, 
+    the sun rises and sets at more extreme angles, creating longer or shorter days depending 
+    on the season. 
+    For example, during the summer solstice in June, the northern hemisphere is tilted towards the sun, so places near the North Pole experience almost 24 hours of daylight, while places near the South Pole experience almost 24 hours of darkness. The opposite happens during the winter solstice in December. The equator, however, has roughly equal day and night throughout the year, because it is always perpendicular to the sun's rays.
+    
+</p>
+
+
+{% comment %} <h1>{{form}}</h1> {% endcomment %}
+<form action="/result" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    
+    <input type = "submit" value = "SUBMIT">
+</form>
+
+{% endblock body %}

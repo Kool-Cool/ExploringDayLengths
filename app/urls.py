@@ -14,5 +14,6 @@ urlpatterns = [
     path("coffee", views.coffee_view_temp),
     path("p2", views.p2_view_temp),
     path("sr", views.sr_view_temp),
+    path("se",views.se_view_temp) ,
     path("result", views.result_view_temp, name="Result"),
 ]

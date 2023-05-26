@@ -10,6 +10,34 @@ from .forms import DaylightHours #NEW
 
 
 
+from datetime import datetime
+from math import sin , asin , cos , acos ,tan , atan , pi 
+
+def day_lenght(L:float ,fun_date=1 , fun_month=1 , fun_year=2023 ):
+    """  
+    L:- lattitude in degrees
+    
+    """
+    
+    date1 = datetime(day=fun_date , month=fun_month,  year=fun_year)
+    date2 = datetime(day= 1 ,month=1 ,year= fun_year)
+    day_count = date1 - date2
+    
+    P = asin(0.39795*cos(0.2163108 + 2*atan(0.9671396*tan(0.00860*((day_count.days)-186)))))
+    
+    num = sin(0.8333*pi/180) + sin(L*pi/180)*sin(P)
+    deno = cos(L*pi/180)*cos(P)
+    
+    D = 24 - (24/pi)*acos(num/deno)
+    
+    return D
+
+
+
+
+
+
+
 
 
 def home_view(request):
@@ -45,6 +73,20 @@ def sr_view_temp(request):
         fm = DaylightHours()
             
     return render(request , "srookie.html" , {'form':fm})
+
+def se_view_temp(request):
+    if request == "POST":
+        fm = DaylightHours(request.POST)
+        if fm.is_valid():
+            dt = fm.data["date"]
+            ltn = fm["latitude_south"]
+            print(dt)
+            print(ltn)
+    else:
+        fm = DaylightHours()
+            
+    return render(request , "senthu.html" , {'form':fm})
+    
 
 
 
