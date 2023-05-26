@@ -18,9 +18,25 @@ Use a radian mode here, but latitude should be entered in degrees.
 {% endcomment %}
 
 {% block body %}
-
+<div>
 For latitude {{latitude}} , on {{date}}/{{month}}/{{year}}:- <br>
 The day light hour is {{result}}
-
+<div>
 
 {% endblock body %}
+
+
+
+{% block foot %}
+
+<div style="text-align:center">
+  <form action = "/p2"  method = "get"> 
+      <input type="submit" style="height:200px;width:400px" value = "CLICK ME TO CONTINUE !! "> </input>
+  </form>
+  </div>
+  
+  
+  </body>
+  </html>
+
+{% endblock foot %}

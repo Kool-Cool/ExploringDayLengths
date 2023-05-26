@@ -6,7 +6,7 @@ from django.core import validators
 
 
 class User(models.Model):
-    date = models.PositiveIntegerField(("Day"),default=1,
+    date = models.PositiveIntegerField(("Date"),default=1,
                                        validators=[
                                            MaxValueValidator(31),
                                            MinValueValidator(1),
