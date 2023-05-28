@@ -8,3 +8,7 @@ the Earth.
 
 
 ![](https://github.com/Kool-Cool/ExploringDayLengths/blob/main/static/giphy.gif)
+
+# Flow Diagram 
+
+![flow_Diagram](https://github.com/Kool-Cool/dump-/blob/main/Capture.PNG)
